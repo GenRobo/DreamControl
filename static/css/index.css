@@ -8,6 +8,12 @@ body {
     color: #000;
 }
 
+h10 {
+  font-size: 0.4rem; /* adjust smaller size */
+  display: block;    /* make it behave like heading */
+  text-align: center;
+}
+
 .link-block a {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -120,13 +126,19 @@ body {
   border: 1px solid #bbb;
   border-radius: 10px;
   padding: 0;
+  padding-bottom: 20px;
   font-size: 0;
+  overflow: visible;
 }
 
 .results-carousel video {
   margin: 0;
 }
 
+.carousel-indicators {
+  bottom: -100px; /* move dots further down */
+  position: relative; /* or absolute depending on your setup */
+}
 
 .interpolation-panel {
   background: #f5f5f5;
