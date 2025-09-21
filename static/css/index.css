@@ -129,7 +129,11 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+   color: hsl(240, 96%, 41%) !important;
+}
+
+.publication-authors b {
+  color: hsl(0, 0%, 0%) !important;
 }
 
 .publication-authors a:hover {
@@ -140,14 +144,7 @@ body {
   display: inline-block;
 }
 
-.author-block a {
-  color: #034e98; /* light blue */
-  text-decoration: none; /* optional: remove underline */
-}
 
-.author-block a:hover {
-  color: #032c55; /* slightly darker on hover */
-}
 
 .publication-banner img {
 }
