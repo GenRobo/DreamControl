@@ -3,153 +3,156 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description"
-        content="DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion">
-    <meta name="keywords" content="Diffusion, MPC, Locomotion Control">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion">
+    <meta property="og:title" content="DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion"/>
+    <!-- <meta property="og:description" content="Building-wide Mobile Manipulation, Vision Language Models"/> -->
+    <meta property="og:description" content="We introduce DreamControl, a novel methodology for learning autonomous whole-body humanoid skills. DreamControl~leverages the strengths of diffusion models and Reinforcement Learning (RL): our core innovation is the use of a diffusion prior trained on human motion data, which subsequently guides an RL policy in simulation to complete specific tasks of interest (e.g., opening a drawer or picking up an object). We demonstrate that this human motion-informed prior allows RL to discover solutions unattainable by direct RL, and that diffusion models inherently promote natural-looking motions, aiding in sim-to-real transfer. We validate DreamControl's effectiveness on a Unitree G1 robot across a diverse set of challenging tasks involving simultaneous lower and upper body control and object interaction."/>
+    <meta property="og:url" content="https://genrobo.github.io/DreamControl/"/>
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/images/overview.png" />
+    <meta property="og:image:width" content="1280"/>
+    <meta property="og:image:height" content="706"/>
+
+
+    <meta name="twitter:title" content="Building-wide Mobile Manipulation">
+    <meta name="twitter:description" content="DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="https://genrobo.github.io/DreamControl/static/images/overview.png">
+    <meta name="twitter:card" content="https://genrobo.github.io/DreamControl/static/images/overview.png">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="Building-wide Mobile Manipulation, Vision Language Models">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion
-    </title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S320SQM1ZP"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-S320SQM1ZP');
-    </script>
+    <title>DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion</title>
+    <link rel="icon" type="image/x-icon" href="static/images/humanoid-outline.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/favicon.svg">
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
 </head>
-
 <body>
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                    <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion</h1>
-                        <div class="is-size-5 publication-authors">
-                            <span class="author-block">
-                                <a href="https://dvij542.github.io">Dvij Kalaria<sup>1,2</sup></a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://sudarshan-s-harithas.github.io/">Sudarshan Harithas<sup>2,3</sup></a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://pushkalkatara.github.io/">Pushkal Katara<sup>1</sup></a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://sang-kyung.github.io/">Sangkyung Kwak<sup>1</sup></a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://sarthak268.github.io/">Sarthak Bhagat<sup>1</sup></a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/sastry.html">S. Shankar Sastry<sup>2</sup></a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://srinathsridhar.com/">Srinath Sridhar<sup>3</sup></a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://www.saihv.com/">Sai Vemprala<sup>1</sup></a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://scholar.google.com/citations?user=4D1n8scAAAAJ&hl=en">Ashish Kapoor<sup>1</sup></a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="http://jonathan-huang.org/">Jonathan Huang<sup>1</sup></a>
-                            </span>
-                        </div>
+<section class="hero-header has-background">
+    <!-- run infinite loop of video -->
+    <video poster="" id="tree" autoplay muted loop class="background-video">
+        <source src="static/videos/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-                        <div class="is-size-5 publication-authors">
-                            <span class="author-block"><sup>1</sup>General Robotics   <sup>2</sup>UC Berkeley <sup>3</sup>Brown University</span>
-                        </div>
-
-                        
-                        <div class="is-size-5 publication-authors">
-                            <span class="author-block">
-                                Under Review
-                                </span>
-                        </div>
-
-                        <div class="column has-text-centered">
-                            <div class="publication-links">
-                                <!-- PDF Link. -->
-                                <span class="link-block">
-                                    <a href="./static/paper/DreamControl_arxiv.pdf" class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fas fa-file-pdf"></i>
-                                        </span>
-                                        <span>Paper</span>
-                                    </a>
-                                </span>
-                                <span class="link-block">
-                                    <a href="./static/paper/DreamControl_arxiv.pdf" class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="ai ai-arxiv"></i>
-                                        </span>
-                                        <span>arXiv</span>
-                                    </a>
-                                </span>
-                                <!-- Video Link. -->
-                                <!-- <span class="link-block">
-                                    <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                                        class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-youtube"></i>
-                                        </span>
-                                        <span>Video</span>
-                                    </a>
-                                </span> -->
-                                <!-- Code Link. -->
-                                <span class="link-block">
-                                    <a href="https://github.com/GenRobo/DreamControl"
-                                        class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-github"></i>
-                                        </span>
-                                        <span>Code (Coming soon!)</span>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="hero teaser">
+    <div class="hero-content">
         <div class="container is-max-desktop">
-            <div class="content has-text-centered">
-                <h2 class="title is-3">Overview Video</h2>
-                <!-- invert static/videos/intro.mov -->
-                <video poster="" id="intro" autoplay controls loop playsinline height="100%">
-                    <source src="./static/videos/Overview.mp4" type="video/mp4">
-                </video>
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+            <!-- Add title here -->
+            <!-- make the size of title greater than 3rem -->
+            <h2 class="title is-3 publication-title is-size-3-mobile" style="color: white; font-weight: bold; margin: 0 auto; text-align: center; font-size: 6rem;">
+                DreamControl
+            </h2>
+            <h2 class="title is-4 publication-title is-size-4-mobile" style="color: white; margin: 0px auto; text-align: center; font-size: 2.7rem;">
+                Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion
+            </h2>
+            <div class="column has-text-centered">
+                <span class="link-block">
+                    <a href="./static/paper/DreamControl.pdf" class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                <a href="https://genrobo.github.io/DreamControl/" target="_blank"
+                    class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                    <i class="fab fa-github fa-lg"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                </a>
+                </span>
+
+                <span class="link-block">
+                <a href="http://arxiv.org/abs/2509.14353" target="_blank"
+                    class="external-link button is-rounded is-normal">
+                    <span class="icon fa-lg">
+                    <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                </a>
+                </span>
+            </div>
+            <br><br>
             </div>
         </div>
+        </div>
+    </div>
+    <!-- Authors section positioned at the bottom -->
+    <div id="author-box" class="author-box" style="position: absolute; bottom: 0; width: 100%; background-color: rgba(255, 255, 255, 0.8); padding: 20px; text-align: center;">
+        <div class="is-size-4 publication-authors">
+            <span class="author-block">
+                <a href="https://dvij542.github.io">Dvij Kalaria<sup>1,2</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://sudarshan-s-harithas.github.io/">Sudarshan Harithas<sup>2,3</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://pushkalkatara.github.io/">Pushkal Katara<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://sang-kyung.github.io/">Sangkyung Kwak<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://sarthak268.github.io/">Sarthak Bhagat<sup>1</sup></a>,
+            </span>
+        </div>
+        <div class="is-size-4 publication-authors">
+            <span class="author-block">
+                <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/sastry.html">S. Shankar Sastry<sup>2</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://srinathsridhar.com/">Srinath Sridhar<sup>3</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.saihv.com/">Sai Vemprala<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=4D1n8scAAAAJ&hl=en">Ashish Kapoor<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="http://jonathan-huang.org/">Jonathan Huang<sup>1</sup></a>
+            </span>
+        </div>
+        <br>
+
+        <h2 class="subtitle has-text-centered is-5" style="color: #000000; font-weight: bold;">
+            <span class="author-block"><sup>1</sup>General Robotics   <sup>2</sup>UC Berkeley <sup>3</sup>Brown University</span>
+        </h2>
+
+        
+        <h2 class="subtitle has-text-centered is-5" style="color: #000000; font-weight: bold;">
+            <span class="author-block">
+                Under Review
+                </span>
+        </div>
+    </div>
+    <!-- Button container positioned at the right -->
     </section>
 
-        <section class="section">
+    <section class="section hero is-light">
         <div class="container is-max-desktop">
             <!-- Abstract. -->
             <div class="columns is-centered has-text-centered">
@@ -165,93 +168,65 @@
             <!--/ Paper video. -->
         </div>
     </section>
+    
 
-    <section class="hero is-light is-small">
+    <section class="hero teaser" id="overview">
+        <div class="container is-max-desktop">
+            <div class="content has-text-centered">
+                <h2 class="title is-3">Overview</h2>
+                <!-- invert static/videos/Hardware/intro.mov -->
+                <video poster="" id="intro" autoplay controls loop playsinline height="100%">
+                    <source src="./static/videos/Hardware/Overview.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <section class="hero is-light is-small" id="robotvideos">
         <div class="hero-body">
             <div class="container">
-                <h2 class="title is-3 has-text-centered">Skills on hardware</h2>
+                <h2 class="title is-3 has-text-centered">Skills deployed on hardware</h2>
                 <div id="results-carousel1" class="carousel results-carousel">
                     <div class="item item-video1">
                     <video poster="" id="video1_" autoplay controls muted loop height="100%">
                         <!-- Your video file here -->
-                        <source src="static/videos/Open_Drawer_GR.mp4"
+                        <source src="static/videos/Hardware/Open_Drawer_GR.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Open top drawer
+                        "Open top drawer"
                     </h10>
                     </div>
                     <div class="item item-video3">
                     <video poster="" id="video3_" autoplay controls muted loop height="100%">\
                         <!-- Your video file here -->
-                        <source src="static/videos/Squat_Open_Drawer_GR.mp4"
+                        <source src="static/videos/Hardware/Squat_Open_Drawer_GR.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Open 3rd drawer from top
+                        "Open 3rd drawer from top"
                     </h10>
                     </div>
                     <div class="item item-video2">
                     <video poster="" id="video2_" autoplay controls muted loop height="100%">
                         <!-- Your video file here -->
-                        <source src="static/videos/Open_Drawer_Other.mp4"
+                        <source src="static/videos/Hardware/Open_Drawer_Other.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Open another top drawer
+                        "Open top drawer" (is loaded)
                     </h10>
                     </div>
                     <div class="item item-video5">
                     <video poster="" id="video5_" autoplay controls muted loop height="100%">\
                         <!-- Your video file here -->
-                        <source src="static/videos/Open_Drawer_Other_loaded.mp4"
+                        <source src="static/videos/Hardware/Open_Drawer_Other_loaded.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Open loaded drawer
-                    </h10>
-                    </div>    
-                </div>
-                
-                <div id="results-carousel1" class="carousel results-carousel">
-                    <div class="item item-video1">
-                    <video poster="" id="video1_" autoplay controls muted loop height="100%">
-                        <!-- Your video file here -->
-                        <source src="static/videos/Pick_Vanilla.mp4"
-                        type="video/mp4">
-                    </video>
-                    <h10 class="subtitle is-4 has-text-centered">
-                        Pick and handover vanilla syrup
-                    </h10>
-                    </div>
-                    <div class="item item-video3">
-                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
-                        <!-- Your video file here -->
-                        <source src="static/videos/Pick_Dishwasher.mp4"
-                        type="video/mp4">
-                    </video>
-                    <h10 class="subtitle is-4 has-text-centered">
-                        Pick and handover dishwasher soap
-                    </h10>
-                    </div>
-                    <div class="item item-video2">
-                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
-                        <!-- Your video file here -->
-                        <source src="static/videos/Pick_Tabag.mp4"
-                        type="video/mp4">
-                    </video>
-                    <h10 class="subtitle is-4 has-text-centered">
-                        Pick and handover teabag
-                    </h10>
-                    </div>
-                    <div class="item item-video5">
-                    <video poster="" id="video5_" autoplay controls muted loop height="100%">\
-                        <!-- Your video file here -->
-                        <source src="static/videos/Pick_Top.mp4"
-                        type="video/mp4">
-                    </video>
-                    <h10 class="subtitle is-4 has-text-centered">
-                        Pick and handover cheetos packet
+                        "Open drawer" (is loaded)
                     </h10>
                     </div>    
                 </div>
@@ -260,41 +235,168 @@
                     <div class="item item-video1">
                     <video poster="" id="video1_" autoplay controls muted loop height="100%">
                         <!-- Your video file here -->
-                        <source src="static/videos/Button_Press_Microwave_Start.mp4"
+                        <source src="static/videos/Hardware/Pick_Vanilla.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Open microwave
+                        "Pick and handover vanilla syrup"
                     </h10>
                     </div>
                     <div class="item item-video3">
                     <video poster="" id="video3_" autoplay controls muted loop height="100%">\
                         <!-- Your video file here -->
-                        <source src="static/videos/Button_Press_Microwave_Open.mp4"
+                        <source src="static/videos/Hardware/Pick_Dishwasher.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Start microwave
+                        "Pick and handover dishwasher soap"
                     </h10>
                     </div>
                     <div class="item item-video2">
                     <video poster="" id="video2_" autoplay controls muted loop height="100%">
                         <!-- Your video file here -->
-                        <source src="static/videos/Button_Press_Elevator_Button.mp4"
+                        <source src="static/videos/Hardware/Pick_Teabag.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Press elevator button
+                        "Pick and handover teabag"
                     </h10>
                     </div>
                     <div class="item item-video5">
                     <video poster="" id="video5_" autoplay controls muted loop height="100%">\
                         <!-- Your video file here -->
-                        <source src="static/videos/Button_Press_Microwave_Open.mp4"
+                        <source src="static/videos/Hardware/Pick_Top.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Open Microwave
+                        "Pick and handover cheetos packet"
+                    </h10>
+                    </div>    
+                </div>
+                
+                <div id="results-carousel1" class="carousel results-carousel">
+                    <div class="item item-video1">
+                    <video poster="" id="video1_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Button_Press_Microwave_Start.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Open microwave"
+                    </h10>
+                    </div>
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Button_Press_Microwave_Open.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Start microwave"
+                    </h10>
+                    </div>
+                    <div class="item item-video2">
+                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Button_Press_Elevator_Button.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Press button to call elevator"
+                    </h10>
+                    </div>
+                    <div class="item item-video4">
+                    <video poster="" id="video4_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Button_Press_Microwave_Start.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Open microwave"
+                    </h10>
+                    </div>
+                    <div class="item item-video5">
+                    <video poster="" id="video5_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Button_Press_Microwave_Open.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Start microwave"
+                    </h10>
+                    </div>
+                    <div class="item item-video4">
+                    <video poster="" id="video4_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Button_Press_Elevator_Button.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Press elevator button"
+                    </h10>
+                    </div>
+                            
+                </div>
+                
+                <div id="results-carousel1" class="carousel results-carousel">
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Bimanual_pick_1_book.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Bimanual lift box with 1 book"
+                    </h10>
+                    </div>
+                    <div class="item item-video2">
+                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Bimanual_pick_2_books.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Bimanual lift box with 2 books"
+                    </h10>
+                    </div>
+                    <div class="item item-video5">
+                    <video poster="" id="video5_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Bimanual_Pick_4_books.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Bimanual lift box with 4 books"
+                    </h10>
+                    </div>
+                    <div class="item item-video4">
+                    <video poster="" id="video4_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Bimanual_pick_1_book.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Bimanual lift box with 1 book"
+                    </h10>
+                    </div>
+                    <div class="item item-video5">
+                    <video poster="" id="video5_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Bimanual_pick_2_books.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Bimanual lift box with 2 books"
+                    </h10>
+                    </div>
+                    <div class="item item-video6">
+                    <video poster="" id="video6_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Hardware/Bimanual_Pick_4_books.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Bimanual lift box with 4 books"
                     </h10>
                     </div>    
                 </div>
@@ -303,41 +405,41 @@
                     <div class="item item-video3">
                     <video poster="" id="video3_" autoplay controls muted loop height="100%">\
                         <!-- Your video file here -->
-                        <source src="static/videos/Bimanual_pick_1_book.mp4"
+                        <source src="static/videos/Hardware/Punch1.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Bimanual pick box with 1 book
+                        "Punch at given target"
                     </h10>
                     </div>
                     <div class="item item-video2">
                     <video poster="" id="video2_" autoplay controls muted loop height="100%">
                         <!-- Your video file here -->
-                        <source src="static/videos/Bimanual_pick_2_books.mp4"
+                        <source src="static/videos/Hardware/Punch2.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Bimanual pick box with 2 books
+                        "Punch the given target"
                     </h10>
                     </div>
                     <div class="item item-video5">
                     <video poster="" id="video5_" autoplay controls muted loop height="100%">\
                         <!-- Your video file here -->
-                        <source src="static/videos/Bimanual_Pick_4_books.mp4"
+                        <source src="static/videos/Hardware/Punch3.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Bimanual pick box with 4 books
+                        "Punch the given target"
                     </h10>
                     </div>
-                    <div class="item item-video5">
+                    <div class="item item-video6">
                     <video poster="" id="video6_" autoplay controls muted loop height="100%">\
                         <!-- Your video file here -->
-                        <source src="static/videos/Bimanual_pick_1_book.mp4"
+                        <source src="static/videos/Hardware/Punch1.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Bimanual pick box with 1 book
+                        "Punch the given target"
                     </h10>
                     </div>    
                 </div>
@@ -346,84 +448,41 @@
                     <div class="item item-video3">
                     <video poster="" id="video3_" autoplay controls muted loop height="100%">\
                         <!-- Your video file here -->
-                        <source src="static/videos/Punch1.mp4"
+                        <source src="static/videos/Hardware/Squat_front.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Punch at given target
+                        "Perform a full Squat" 
                     </h10>
                     </div>
                     <div class="item item-video2">
                     <video poster="" id="video2_" autoplay controls muted loop height="100%">
                         <!-- Your video file here -->
-                        <source src="static/videos/Punch2.mp4"
+                        <source src="static/videos/Hardware/Squat_half.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Punch at given target
+                        "Perform a half Squat"
                     </h10>
                     </div>
-                    <div class="item item-video5">
-                    <video poster="" id="video5_" autoplay controls muted loop height="100%">\
-                        <!-- Your video file here -->
-                        <source src="static/videos/Punch3.mp4"
-                        type="video/mp4">
-                    </video>
-                    <h10 class="subtitle is-4 has-text-centered">
-                        Punch at given target
-                    </h10>
-                    </div>
-                    <div class="item item-video5">
-                    <video poster="" id="video6_" autoplay controls muted loop height="100%">\
-                        <!-- Your video file here -->
-                        <source src="static/videos/Punch1.mp4"
-                        type="video/mp4">
-                    </video>
-                    <h10 class="subtitle is-4 has-text-centered">
-                        Punch at given target
-                    </h10>
-                    </div>    
-                </div>
-                
-                <div id="results-carousel1" class="carousel results-carousel">
                     <div class="item item-video3">
                     <video poster="" id="video3_" autoplay controls muted loop height="100%">\
                         <!-- Your video file here -->
-                        <source src="static/videos/Squat_front.mp4"
+                        <source src="static/videos/Hardware/Squat_front.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Squat 
+                        "Perform a full Squat" 
                     </h10>
                     </div>
                     <div class="item item-video2">
                     <video poster="" id="video2_" autoplay controls muted loop height="100%">
                         <!-- Your video file here -->
-                        <source src="static/videos/Squat-half1.mp4"
+                        <source src="static/videos/Hardware/Squat_half.mp4"
                         type="video/mp4">
                     </video>
                     <h10 class="subtitle is-4 has-text-centered">
-                        Squat (half)
-                    </h10>
-                    </div>
-                    <div class="item item-video5">
-                    <video poster="" id="video5_" autoplay controls muted loop height="100%">\
-                        <!-- Your video file here -->
-                        <source src="static/videos/Squat-full2.mp4"
-                        type="video/mp4">
-                    </video>
-                    <h10 class="subtitle is-4 has-text-centered">
-                        Squat
-                    </h10>
-                    </div>
-                    <div class="item item-video5">
-                    <video poster="" id="video6_" autoplay controls muted loop height="100%">\
-                        <!-- Your video file here -->
-                        <source src="static/videos/Squat_front.mp4"
-                        type="video/mp4">
-                    </video>
-                    <h10 class="subtitle is-4 has-text-centered">
-                        Squat
+                        "Perform a half Squat"
                     </h10>
                     </div>    
                 </div>
@@ -431,17 +490,353 @@
         </div>
     </section>
 
-        
+    <section class="hero is-light is-small">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-3 has-text-centered">Skills deployed in simulation</h2>
+                <div id="results-carousel1" class="carousel results-carousel">
+                    <div class="item item-video1">
+                    <video poster="" id="video1_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Pick_1.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Pick the mustard bottle on platform"
+                    </h10>
+                    </div>
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Pick_ground2.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Pick the "cheez it" packet on ground" (Top grasp)
+                    </h10>
+                    </div>
+                    <div class="item item-video2">
+                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Pick_ground1.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Pick the bottle on ground" (Side grasp)
+                    </h10>
+                    </div>
+                    <div class="item item-video5">
+                        <video poster="" id="video5_" autoplay controls muted loop height="100%">\
+                            <!-- Your video file here -->
+                            <source src="static/videos/Sim/Pick_4.mp4"
+                            type="video/mp4">
+                        </video>
+                        <h10 class="subtitle is-4 has-text-centered">
+                            "Pick the sugar packet on platform"
+                        </h10>
+                    </div>
+                    <div class="item item-video5">
+                        <video poster="" id="video5_" autoplay controls muted loop height="100%">\
+                            <!-- Your video file here -->
+                            <source src="static/videos/Sim/Pick_3.mp4"
+                            type="video/mp4">
+                        </video>
+                        <h10 class="subtitle is-4 has-text-centered">
+                            "Pick the tomato can on platform"
+                        </h10>
+                    </div>
+                    <div class="item item-video5">
+                    <video poster="" id="video5_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Pick_2.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Pick the mug on platform"
+                    </h10>
+                    </div>
+                </div>
+                
+                <div id="results-carousel1" class="carousel results-carousel">
+                    <div class="item item-video1">
+                    <video poster="" id="video1_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Drawer_1.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Open top drawer"
+                    </h10>
+                    </div>
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Drawer_2.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Open 2nd drawer from top"
+                    </h10>
+                    </div>
+                    <div class="item item-video2">
+                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Drawer_2.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Open 3rd drawer from top"
+                    </h10>
+                    </div>
+                    <div class="item item-video1">
+                    <video poster="" id="video1_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Drawer_1.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Open top drawer"
+                    </h10>
+                    </div>
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Drawer_2.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Open 2nd drawer from top"
+                    </h10>
+                    </div>
+                    <div class="item item-video2">
+                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Drawer_2.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Open 3rd drawer from top"
+                    </h10>
+                    </div>        
+                </div>
+                
+                <div id="results-carousel1" class="carousel results-carousel">
+                    <div class="item item-video1">
+                    <video poster="" id="video1_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Button_press1.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Press button to call elevator"
+                    </h10>
+                    </div>
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Button_press2.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Press button to call elevator"
+                    </h10>
+                    </div>
+                    <div class="item item-video2">
+                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Button_press3.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Press button to call elevator"
+                    </h10>
+                    </div>
+                    <div class="item item-video4">
+                    <video poster="" id="video4_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Button_press4.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Press button to call elevator"
+                    </h10>
+                    </div>       
+                </div>
+                
+                <div id="results-carousel1" class="carousel results-carousel">
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Punch_1.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Punch the given target"
+                    </h10>
+                    </div>
+                    <div class="item item-video2">
+                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Punch_2.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Punch the given target"
+                    </h10>
+                    </div>
+                    <div class="item item-video5">
+                    <video poster="" id="video5_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Punch_3.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Punch the given target"
+                    </h10>
+                    </div>
+                    <div class="item item-video4">
+                    <video poster="" id="video4_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Punch_4.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Punch the given target"
+                    </h10>
+                    </div>    
+                </div>
+                
+                <div id="results-carousel1" class="carousel results-carousel">
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Kick_1.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Kick the given target"
+                    </h10>
+                    </div>
+                    <div class="item item-video2">
+                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Kick_2.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Kick the given target"
+                    </h10>
+                    </div>
+                    <div class="item item-video5">
+                    <video poster="" id="video5_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Kick_3.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Kick the given target"
+                    </h10>
+                    </div>
+                    <div class="item item-video6">
+                    <video poster="" id="video6_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Kick_4.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Kick the given target"
+                    </h10>
+                    </div>    
+                </div>
+                
+                <div id="results-carousel1" class="carousel results-carousel">
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Bimanual_pick1.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Bimanual lift the box" 
+                    </h10>
+                    </div>
+                    <div class="item item-video2">
+                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Jump.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Jump over the obstacle"
+                    </h10>
+                    </div>
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Sit.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Sit at the given position" 
+                    </h10>
+                    </div>    
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Bimanual_pick1.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Bimanual lift the box" 
+                    </h10>
+                    </div>
+                    <div class="item item-video2">
+                    <video poster="" id="video2_" autoplay controls muted loop height="100%">
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Jump.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Jump over the obstacle"
+                    </h10>
+                    </div>
+                    <div class="item item-video3">
+                    <video poster="" id="video3_" autoplay controls muted loop height="100%">\
+                        <!-- Your video file here -->
+                        <source src="static/videos/Sim/Sit.mp4"
+                        type="video/mp4">
+                    </video>
+                    <h10 class="subtitle is-4 has-text-centered">
+                        "Sit at the given position" 
+                    </h10>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    <section class="section" id="BibTeX">
+    <!-- Add an image here -->
+    <section class="section" id="methodology">
+        <div class="hero-body">
+        <div class="container has-text-centered">
+            <h2 class="title is-3">DreamControl Methodology</h2>
+            <div class="item">
+                <img src="static/images/overview.png" alt="DreamControl Methodology">
+            </div>
+        </div>
+        </div>
+    </section>
+  
+    
+    <section class="section" id="bibtex">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
             <pre><code>
-                @misc{kalaria2025dreamcontrol,
-                    title={DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion}, 
-                    author={Dvij Kalaria and Sudarshan Harithas and Pushkal Katara and Sangkyung Kwak and Sarthak Bhagat and S. Shankar Sastry and Srinath Sridhar and Sai Vemprala and Ashish Kapoor and Jonathan Huang},
-                    year={2025}, 
-                }
+@misc{kalaria2025dreamcontrol,
+    title={DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion}, 
+    author={Dvij Kalaria and Sudarshan Harithas and Pushkal Katara and Sangkyung Kwak and Sarthak Bhagat and S. Shankar Sastry and Srinath Sridhar and Sai Vemprala and Ashish Kapoor and Jonathan Huang},
+    year={2025}, 
+}
             </code></pre>
         </div>
     </section>
@@ -462,6 +857,26 @@
         </div>
     </footer>
 
+<div class="topnav">
+    <!-- <a class="active" href="#home">Home</a> -->
+    <!-- <a href="#bibtex">BibTex</a> -->
+    <a href="#bibtex" class="external-link">
+        <i class="fas fa-book icon-padding"></i>
+        <span>BibTex</span>
+    </a>
+    <a href="#overview" class="external-link">
+        <i class="fas fa-eye icon-padding"></i>
+        <span>Overview</span>
+    </a>
+    <a href="#methodology" class="external-link">
+        <i class="fas fa-brain icon-padding"></i>
+        <span>Methodology</span>
+    </a>
+    <a href="#robotvideos" class="external-link">
+        <i class="fas fa-video icon-padding"></i>
+        <span>Result Videos</span>
+    </a>
+    </div>
 </body>
 
 </html>
