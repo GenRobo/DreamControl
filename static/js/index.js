@@ -12,16 +12,17 @@ $(document).ready(function() {
     // });
 
     // var slidesToShow = window.innerWidth <= 768 ? 1 : 3;  // 1 for mobile, 3 for desktop
-
+    // Set autoplay true if on desktop and false if on mobile
+    var autoplay = window.innerWidth <= 768 ? false : true;
     var options = {
       slidesToScroll: 1,
       slidesToShow: 3,
       loop: true,
       infinite: true,
-      autoplay: false,
+      autoplay: autoplay,
       autoplaySpeed: 5000,
       playsinline: true,
-      preload: 'auto',
+      preload: 'none',
     };
 
 		// Initialize all div with carousel class
