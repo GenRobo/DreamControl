@@ -4,12 +4,12 @@ window.HELP_IMPROVE_VIDEOJS = false;
 
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
-    $(".navbar-burger").click(function() {
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      $(".navbar-burger").toggleClass("is-active");
-      $(".navbar-menu").toggleClass("is-active");
+    // $(".navbar-burger").click(function() {
+    //   // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    //   $(".navbar-burger").toggleClass("is-active");
+    //   $(".navbar-menu").toggleClass("is-active");
 
-    });
+    // });
 
     // var slidesToShow = window.innerWidth <= 768 ? 1 : 3;  // 1 for mobile, 3 for desktop
 
