@@ -20,6 +20,7 @@ $(document).ready(function() {
       infinite: true,
       autoplay: false,
       autoplaySpeed: 5000,
+      playsinline: true,
     };
 
 		// Initialize all div with carousel class
