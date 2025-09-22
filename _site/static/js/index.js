@@ -29,14 +29,16 @@ $(document).ready(function() {
 
     });
 
+    var slidesToShow = window.innerWidth <= 768 ? 1 : 3;  // 1 for mobile, 3 for desktop
+
     var options = {
-			slidesToScroll: 1,
-			slidesToShow: 3,
-			loop: true,
-			infinite: true,
-			autoplay: false,
-			autoplaySpeed: 3000,
-    }
+      slidesToScroll: 1,
+      slidesToShow: slidesToShow,
+      loop: true,
+      infinite: true,
+      autoplay: false,
+      autoplaySpeed: 3000,
+    };
 
 		// Initialize all div with carousel class
     var carousels = bulmaCarousel.attach('.carousel', options);
