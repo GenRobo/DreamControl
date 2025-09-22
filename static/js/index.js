@@ -11,12 +11,21 @@ $(document).ready(function() {
 
     // });
 
-    // var slidesToShow = window.innerWidth <= 768 ? 1 : 3;  // 1 for mobile, 3 for desktop
-    // Set autoplay true if on desktop and false if on mobile
-    var autoplay = window.innerWidth <= 768 ? false : true;
+    // Device detection function
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+               window.innerWidth <= 768;
+    }
+
+    // Set autoplay based on device type
+    var isMobile = isMobileDevice();
+    var autoplay = !isMobile; // true for desktop, false for mobile
+    var slidesToShow = isMobile ? 1 : 3;
+    // Debug logging
+    console.log('Device detection - isMobile:', isMobile, 'autoplay:', autoplay);
     var options = {
       slidesToScroll: 1,
-      slidesToShow: 3,
+      slidesToShow: slidesToShow,
       loop: true,
       infinite: true,
       autoplay: false,
@@ -28,6 +37,27 @@ $(document).ready(function() {
 		// Initialize all div with carousel class
     var carousels = bulmaCarousel.attach('.carousel', options);
     
+    // Handle background video autoplay
+    // var backgroundVideo = document.getElementById('tree');
+    // if (backgroundVideo) {
+    //     if (autoplay) {
+    //         backgroundVideo.setAttribute('autoplay', '');
+    //     } else {
+    //         backgroundVideo.removeAttribute('autoplay');
+    //     }
+    // }
+    console.log('autoplay:', autoplay);
+    // print some value so that I know it is working
+    // Handle carousel videos autoplay
+    var carouselVideos = document.querySelectorAll('.carousel video');
+    carouselVideos.forEach(function(video) {
+        console.log('autoplay:', autoplay);
+        if (autoplay) {
+            video.setAttribute('autoplay', '');
+        } else {
+            video.removeAttribute('autoplay');
+        }
+    });
     
     // Loop on each carousel initialized
     // for(var i = 0; i < carousels.length; i++) {
