@@ -11,11 +11,11 @@ $(document).ready(function() {
 
     });
 
-    var slidesToShow = window.innerWidth <= 768 ? 1 : 3;  // 1 for mobile, 3 for desktop
+    // var slidesToShow = window.innerWidth <= 768 ? 1 : 3;  // 1 for mobile, 3 for desktop
 
     var options = {
       slidesToScroll: 1,
-      slidesToShow: slidesToShow,
+      slidesToShow: 3,
       loop: true,
       infinite: true,
       autoplay: false,
