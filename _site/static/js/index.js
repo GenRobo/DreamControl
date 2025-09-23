@@ -38,24 +38,54 @@ $(document).ready(function() {
     var carousels = bulmaCarousel.attach('.carousel', options);
     
     // Handle background video autoplay
-    // var backgroundVideo = document.getElementById('tree');
-    // if (backgroundVideo) {
-    //     if (autoplay) {
-    //         backgroundVideo.setAttribute('autoplay', '');
-    //     } else {
-    //         backgroundVideo.removeAttribute('autoplay');
-    //     }
-    // }
-    console.log('autoplay:', autoplay);
-    // print some value so that I know it is working
+    var backgroundVideo = document.getElementById('tree');
+    if (backgroundVideo) {
+        console.log('Background video found, setting autoplay:', autoplay);
+        if (autoplay) {
+            backgroundVideo.setAttribute('autoplay', '');
+            backgroundVideo.setAttribute('preload', 'auto');
+            console.log('Added autoplay to background video and set preload to auto');
+            
+            // Try to play the background video programmatically as a fallback
+            backgroundVideo.play().then(function() {
+                console.log('Background video started playing successfully');
+            }).catch(function(error) {
+                console.log('Background video autoplay failed:', error);
+            });
+        } else {
+          backgroundVideo.setAttribute('autoplay', '');
+          backgroundVideo.setAttribute('preload', 'auto');
+          console.log('Added autoplay to background video and set preload to auto');
+          
+          // Try to play the background video programmatically as a fallback
+          backgroundVideo.play().then(function() {
+              console.log('Background video started playing successfully');
+          }).catch(function(error) {
+              console.log('Background video autoplay failed:', error);
+          });
+        }
+    } else {
+        console.log('Background video not found!');
+    }
     // Handle carousel videos autoplay
     var carouselVideos = document.querySelectorAll('.carousel video');
     carouselVideos.forEach(function(video) {
-        console.log('autoplay:', autoplay);
+        console.log('Processing video, autoplay:', autoplay);
         if (autoplay) {
             video.setAttribute('autoplay', '');
+            video.setAttribute('preload', 'auto'); // Change from 'none' to 'auto' for autoplay to work
+            console.log('Added autoplay to video and set preload to auto');
+            
+            // Try to play the video programmatically as a fallback
+            video.play().then(function() {
+                console.log('Video started playing successfully');
+            }).catch(function(error) {
+                console.log('Autoplay failed:', error);
+            });
         } else {
             video.removeAttribute('autoplay');
+            video.setAttribute('preload', 'none'); // Keep preload as 'none' when no autoplay
+            console.log('Removed autoplay from video and set preload to none');
         }
     });
     
