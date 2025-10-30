@@ -1,0 +1,248 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  /* position: relative; */
+}
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+/* .link-block a { */
+/*     margin-top: 5px; */
+/*     margin-bottom: 5px; */
+/*     background-color: #f2f2f2; */
+/* } */
+.link-block a {
+    color: black; /* White text */
+    background-color: #FFFFF; /* Light grey background */
+    border-radius: 5px; /* Rounded corners */
+    border: 0px solid #000;
+    text-decoration: none; /* Remove underline */
+    display: inline-flex; /* Use flexbox for proper alignment */
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+    padding: 10px 15px; /* Adjust padding as needed */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    font-size: 20px; /* Adjust font size */
+    cursor: pointer; /* Pointer cursor for buttons */
+    gap: 8px; /* Adds space between the icon and text */
+    flex-grow: 1; /* Make buttons grow equally */
+    flex-basis: 0; /* Prevent default sizing and let flex-grow handle the width */
+}
+
+/* Hover effect for the buttons */
+.link-block a:hover {
+    background-color: #D3D3D3; /* Darker grey on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow effect on hover */
+}
+
+.link-block .fa-github {
+    color: #000;
+}
+.link-block .ai-arxiv {
+    color: #b31b1b;
+}
+
+
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-header {
+  position: relative;
+  min-height: 100vh; /* Ensure the hero section is at least the height of the viewport */
+  overflow: hidden;
+  color: white;
+  /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); */
+}
+
+.hero-content {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 2;
+}
+
+/* Desktop positioning - center the content */
+@media (min-width: 769px) {
+  .hero-content {
+    top: 50%;
+  }
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(240, 96%, 41%) !important;
+}
+
+.publication-authors b {
+  color: hsl(0, 0%, 0%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  padding: 20px;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.slider-pagination .slider-page {
+  background: #000000;
+}
+
+.eql-cntrb {
+  font-size: smaller;
+}
+
+.icon-padding {
+padding-top: 5px;
+padding-right: 5px; /* Adjust the padding as needed */
+font-size: 25px;
+}
+
+.topnav {
+  position: fixed;
+  overflow: hidden;
+  /* background-color: #333; */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* width: 100%; */
+  top: 0;
+  right: 0;
+  z-index: 3;
+  border-radius: 0px;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+h10 {
+  font-size: 0.4rem; /* adjust smaller size */
+  display: block;    /* make it behave like heading */
+  text-align: center;
+}

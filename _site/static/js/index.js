@@ -67,27 +67,61 @@ $(document).ready(function() {
     } else {
         console.log('Background video not found!');
     }
-    // Handle carousel videos autoplay
+    // Optimize carousel videos: only play when sufficiently visible (desktop only)
     var carouselVideos = document.querySelectorAll('.carousel video');
-    carouselVideos.forEach(function(video) {
-        console.log('Processing video, autoplay:', autoplay);
-        if (autoplay) {
-            video.setAttribute('autoplay', '');
-            video.setAttribute('preload', 'auto'); // Change from 'none' to 'auto' for autoplay to work
-            console.log('Added autoplay to video and set preload to auto');
-            
-            // Try to play the video programmatically as a fallback
-            video.play().then(function() {
-                console.log('Video started playing successfully');
-            }).catch(function(error) {
-                console.log('Autoplay failed:', error);
-            });
-        } else {
+
+    if (!isMobile) {
+        // Desktop behavior: play/pause based on visibility
+        carouselVideos.forEach(function(video) {
+            video.muted = true;
             video.removeAttribute('autoplay');
-            video.setAttribute('preload', 'none'); // Keep preload as 'none' when no autoplay
-            console.log('Removed autoplay from video and set preload to none');
-        }
-    });
+            video.setAttribute('preload', 'metadata');
+        });
+
+        var visibilityObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                var video = entry.target;
+                var isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.6;
+
+                if (isVisible) {
+                    video.setAttribute('preload', 'auto');
+
+                    var carouselRoot = video.closest('.carousel');
+                    if (carouselRoot) {
+                        carouselRoot.querySelectorAll('video').forEach(function(sibling) {
+                            if (sibling !== video && !sibling.paused) {
+                                try { sibling.pause(); } catch (e) { /* no-op */ }
+                            }
+                        });
+                    }
+
+                    video.play().catch(function() { /* Autoplay might be blocked; ignore */ });
+                } else {
+                    try { video.pause(); } catch (e) { /* no-op */ }
+                }
+            });
+        }, { threshold: [0, 0.25, 0.5, 0.6, 0.75, 1] });
+
+        carouselVideos.forEach(function(video) {
+            visibilityObserver.observe(video);
+        });
+
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.querySelectorAll('.carousel video').forEach(function(video) {
+                    try { video.pause(); } catch (e) { /* no-op */ }
+                });
+            }
+        });
+    } else {
+        // Mobile behavior: never autoplay, keep minimal preload, ensure paused
+        carouselVideos.forEach(function(video) {
+            video.muted = true;
+            video.removeAttribute('autoplay');
+            video.setAttribute('preload', 'none');
+            // try { video.pause(); } catch (e) { /* no-op */ }
+        });
+    }
     
     // Loop on each carousel initialized
     // for(var i = 0; i < carousels.length; i++) {
