@@ -81,19 +81,19 @@ $(document).ready(function() {
         var visibilityObserver = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 var video = entry.target;
-                var isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.6;
+                var isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.9;
 
                 if (isVisible) {
                     video.setAttribute('preload', 'auto');
 
                     var carouselRoot = video.closest('.carousel');
-                    if (carouselRoot) {
-                        carouselRoot.querySelectorAll('video').forEach(function(sibling) {
-                            if (sibling !== video && !sibling.paused) {
-                                try { sibling.pause(); } catch (e) { /* no-op */ }
-                            }
-                        });
-                    }
+                    // if (carouselRoot) {
+                    //     carouselRoot.querySelectorAll('video').forEach(function(sibling) {
+                    //         if (sibling !== video && !sibling.paused) {
+                    //             try { sibling.pause(); } catch (e) { /* no-op */ }
+                    //         }
+                    //     });
+                    // }
 
                     video.play().catch(function() { /* Autoplay might be blocked; ignore */ });
                 } else {
