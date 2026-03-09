@@ -30,7 +30,7 @@ TASK_NAME can be one of the following:
 
 ## (Optional) Train Sim2Real RL policy
 
-Train Sim2Real RL policy for the tasks. The trained policy weights for most tasks are already in the [Sim2Real/logs/](https://github.com/GenRobo/DreamControl/tree/main/Sim2Real/logs) folder. You may skip this step if you want to directly use these trained policies for inference.
+Train Sim2Real RL policy for the tasks. The trained policy weights for most tasks are already in the [Sim2Real/deploy/policies/](https://github.com/GenRobo/DreamControl/tree/main/Sim2Real/deploy/policies/) folder. You may skip this step if you want to directly use these trained policies for inference.
 
 ```shell
 ./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/train.py --task=Isaac-Motion-Tracking-<TASK-NAME>-Real-v0 --headless --device cuda:1
